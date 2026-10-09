@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RitmoVivo | Portal de Música</title>
+
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f1fa; color: #2b2540; }
+        header { background: #6b2fc0; color: #fff; text-align: center; padding: 0 0 20px; }
+        header img { width: 100%; height: 240px; object-fit: cover; display: block; margin-bottom: 16px; }
+        nav { background: #2b1760; text-align: center; padding: 12px; color: #fff; }
+        nav a { color: #fff; font-weight: bold; text-decoration: none; padding: 0 10px; }
+        main { max-width: 900px; margin: 20px auto; padding: 0 16px; }
+        section, aside { background: #fff; padding: 16px 22px; margin-bottom: 20px; border-radius: 8px; }
+        aside { border-left: 5px solid #8b3fd9; }
+        article { border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px; }
+        figure { margin: 0 0 12px; }
+        figure img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; display: block; }
+        figcaption { font-size: 0.85em; color: #6b6480; margin-top: 4px; }
+        .portada { max-width: 220px; margin: 0 auto 12px; }
+        .portada img { height: auto; aspect-ratio: 1 / 1; }
+        aside img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+        audio, progress, meter { width: 100%; }
+        label { display: block; font-weight: bold; margin-top: 10px; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px 24px; background: #8b3fd9; color: #fff; border: 0; font-weight: bold; margin-top: 16px; cursor: pointer; }
+        footer { background: #2b1760; color: #fff; text-align: center; padding: 16px; }
+        footer ul { list-style: none; padding: 0; margin: 8px 0 0; }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="imagenes/Baner.JPG.jpg" alt="Concierto con luces y público disfrutando la música">
+    <h1>RitmoVivo</h1>
+    <p>Portal de Música: Noticias, Canciones y Comunidad</p>
+</header>
+
+<nav>
+    <a href="#novedades">Novedades</a>
+    <a href="#reproductor">Reproductor</a>
+    <a href="#suscripcion">Suscripción</a>
+    <a href="#top">Top Semanal</a>
+</nav>
+
+<main>
+
+    <section id="novedades">
+        <h2>Novedades Musicales</h2>
+
+        <article>
+            <h3>Los géneros que más se escuchan</h3>
+            <figure>
+                <img src="imagenes/Generos.JPG.jpg" alt="Personas escuchando música con audífonos">
+                <figcaption>La música une a todas las generaciones.</figcaption>
+            </figure>
+            <p>El pop, el reguetón, el rock y la música regional son los géneros favoritos
+               de los oyentes. Las plataformas digitales permiten descubrir artistas nuevos en segundos.</p>
+        </article>
+
+        <article>
+            <h3>Cómo armar tu primera playlist</h3>
+            <figure>
+                <img src="imagenes/playlist.JPG.jpg" alt="Teléfono mostrando una lista de reproducción">
+                <figcaption>Una buena playlist cuenta una historia.</figcaption>
+            </figure>
+            <p>Elige un tema, escoge entre diez y veinte canciones que combinen en ritmo y ordénalas
+               para que la lista empiece suave, suba de intensidad y termine tranquila.</p>
+        </article>
+    </section>
+
+    <section id="reproductor">
+        <h2>Escucha ahora</h2>
+
+        <article>
+            <h3>Canción del día</h3>
+
+            <figure class="portada">
+                <img src="imagenes/portada.jpg" alt="Portada del álbum de la canción del día">
+            </figure>
+
+            <p>Presiona play para escuchar la canción destacada.</p>
+
+            <audio controls>
+                <source src="audios/The Beatles - Here Comes The Sun (2019 Mix) - TheBeatlesVEVO.mp3" type="audio/wav">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+
+            <label for="descarga">Descarga del álbum (65%):</label>
+            <progress id="descarga" value="65" max="100">65%</progress>
+
+            <label for="popularidad">Popularidad (8 de 10):</label>
+            <meter id="popularidad" value="8" min="0" max="10">8 de 10</meter>
+        </article>
+
+        <h2>Video de YouTube</h2>
+<article>
+    <h3>The Beatles - Here Comes The Sun</h3>
+
+    <iframe
+        width="480"
+        height="270"
+        src="https://www.youtube.com/embed/KQetemT1sWc"
+        title="The Beatles - Here Comes The Sun (2019 Mix)"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</article>
+    </section>
+
+    
+    <section id="suscripcion">
+        <h2>Únete a la comunidad</h2>
+
+        <form action="#" method="get">
+            <label for="correo">Correo electrónico *</label>
+            <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+
+            <label for="telefono">Teléfono (formato 0000-0000)</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="0000-0000"
+                   pattern="[0-9]{4}-[0-9]{4}" title="Escribe el teléfono con el formato 0000-0000">
+
+            <label for="horas">Horas de música al día (0 a 24)</label>
+            <input type="number" id="horas" name="horas" min="0" max="24">
+
+            <label for="nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="nacimiento" name="nacimiento">
+
+            <button type="submit">Suscribirme</button>
+        </form>
+    </section>
+
+    <aside id="top">
+        <img src="imagenes/top.jpg" alt="Micrófono y partituras sobre un escenario">
+        <h2>Top 5 de la semana</h2>
+        <ol>
+            <li>Canción número uno</li>
+            <li>Éxito del verano</li>
+            <li>Balada romántica</li>
+            <li>Ritmo de fiesta</li>
+            <li>Clásico del rock</li>
+        </ol>
+    </aside>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 RitmoVivo. Página creada por:</p>
+    <ul>
+        <li>Arnold Josué Martínez Fuentes - 124250053</li>
+        <li>Yessenia Carolina Pérez Posadas - 323020014</li>
+        <li>Siria Yorleni Mejía Murillo - 124350109</li>
+        <li>Anthony Noé Mata - 123270025</li>
+        <li>Anthony Sebastian Mejía Oliva - 123270007</li>
+        <li>Hector Rolando Torres Martinez - 123070020</li>
+
+    </ul>
+</footer>
+
+</body>
+</html>
